@@ -1,4 +1,5 @@
 ---
+- name: installing httpd server
   hosts: devserver
   become: true
   tasks:
