@@ -7,7 +7,7 @@
   - name: installing packages
     apt:
       name: httpd
-      state: present
+      state: latest
   - name: start apache server
     service:
       name: httpd
