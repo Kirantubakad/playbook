@@ -1,6 +1,5 @@
 ---
-- name: installing apache webserver
-  host: devserver
+  hosts: devserver
   become: true
   tasks:
   - name: installing packages
