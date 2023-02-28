@@ -3,12 +3,19 @@
   host: devserver
   become: true
   tasks:
-  - name: apache server
-    apt: httpd
-    state: latest
-  - name: starting of apache server
+  - name: installing packages
+    apt:
+      name: httpd
+      state: present
+  - name: start apache server
     service:
-    - name: httpd
+      name: httpd
       state: started
+      enabled: true
+  - name: deploy static website
+    copy:
+      src: index.html
+      dest: /var/www/html/
+...
       
     
