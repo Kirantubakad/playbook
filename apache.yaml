@@ -1,0 +1,14 @@
+---
+- name: installing apache webserver
+  host: all
+  become: true
+  tasks:
+  - name: apache server
+    apt: httpd
+    state: latest
+  - name: starting of apache server
+    service:
+    - name: httpd
+      state: started
+      
+    
